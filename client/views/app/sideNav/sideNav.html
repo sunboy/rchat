@@ -1,0 +1,35 @@
+<template name="sideNav">
+	<aside class="side-nav" role="navigation">
+		<header class="header">
+			{{> userStatus}}
+		</header>
+		{{#if currentUser}}
+			<div class="rooms-list">
+				<div class="wrapper">
+					<!-- {{> contacts}} -->
+					{{> starredRooms }}
+					{{> channels }}
+					{{> directMessages }}
+					{{> privateGroups }}
+					<h3>
+						<a href="{{pathFor 'privateHistory'}}">{{_ "History"}}</a>
+					</h3>
+					{{#if isAdmin}}
+					<h3 class="open-admin">
+						{{_ "Administration"}}
+					</h3>
+					{{/if}}
+				</div>
+			</div>
+			<div class="flex-nav hidden">
+				<section>
+					{{> UI.dynamic template=flexTemplate data=flexData}}
+				</section>
+			</div>
+			<span class="arrow bottom"></span>
+		{{/if}}
+		<footer class="footer">
+		The college link!
+		</footer>
+	</aside>
+</template>

@@ -1,0 +1,9 @@
+<template name="contacts">
+	<h3 class="{{isActive}}">{{_ "Contacts"}}</h3>
+		<ul>
+			{{#each contactlist}}
+				{{> name }}
+			{{/each}}
+		</ul>
+		<!-- <p class="empty">{{_ "No_contacts_yet" }}</p> -->
+</template>
